@@ -1,0 +1,198 @@
+/* STILOS DE LA TIENDA - CYBERPUNK / VIBRANT*/
+:root {
+  --bg-dark: #09090b;
+  --card-bg: #18181b;
+  --card-border: #27272a;
+  --text-main: #fafafa;
+  --text-muted: #a1a1aa;
+  
+  --accent-neon: #10b981;      /* Verde esmeralda brillante */
+  --accent-hover: #059669;
+  --accent-glow: rgba(16, 185, 129, 0.25);
+
+  --danger: #f43f5e;           /* Rosa neón para eliminar */
+  --danger-hover: #e11d48;
+  
+  --radius: 14px;
+  --shadow: 0 10px 30px -10px rgba(0, 0, 0, 0.5);
+}
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  font-family: 'Inter', system-ui, -apple-system, sans-serif;
+}
+
+body {
+  background-color: var(--bg-dark);
+  color: var(--text-main);
+  padding: 2.5rem 1rem;
+  min-height: 100vh;
+}
+
+.app {
+  max-width: 960px;
+  margin: 0 auto;
+  display: flex;
+  flex-direction: column;
+  gap: 1.8rem;
+}
+
+/* Encabezado */
+.encabezado {
+  background-color: var(--card-bg);
+  padding: 1.25rem 2rem;
+  border-radius: var(--radius);
+  border: 1px solid var(--card-border);
+  box-shadow: var(--shadow);
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.encabezado h1 {
+  font-size: 1.5rem;
+  font-weight: 700;
+  letter-spacing: -0.5px;
+  color: var(--text-main);
+}
+
+.insignia {
+  background-color: var(--accent-neon);
+  color: var(--bg-dark);
+  padding: 0.3rem 0.85rem;
+  border-radius: 999px;
+  font-weight: 800;
+  font-size: 0.9rem;
+  box-shadow: 0 0 15px var(--accent-glow);
+}
+
+/* Contenido Principal en Columnas */
+.contenido {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 1.8rem;
+}
+
+@media (min-width: 768px) {
+  .contenido {
+    grid-template-columns: 1.3fr 0.7fr;
+  }
+}
+
+/* Paneles de Tarjetas */
+.panel {
+  background-color: var(--card-bg);
+  border-radius: var(--radius);
+  padding: 1.75rem;
+  border: 1px solid var(--card-border);
+  box-shadow: var(--shadow);
+  display: flex;
+  flex-direction: column;
+  gap: 1.2rem;
+}
+
+.panel h2 {
+  font-size: 1.2rem;
+  font-weight: 600;
+  color: var(--text-main);
+  border-bottom: 1px solid var(--card-border);
+  padding-bottom: 0.8rem;
+}
+
+/* Filas de la lista y carrito */
+.fila {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0.85rem 0;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.04);
+}
+
+.fila:last-of-type {
+  border-bottom: none;
+}
+
+.fila-nombre {
+  font-weight: 600;
+  font-size: 0.95rem;
+  color: var(--text-main);
+}
+
+.fila-detalle {
+  font-size: 0.85rem;
+  color: var(--text-muted);
+  margin-top: 0.2rem;
+}
+
+.fila-detalle strong {
+  color: var(--accent-neon);
+}
+
+/* Botones */
+.btn {
+  border: none;
+  padding: 0.5rem 1rem;
+  border-radius: 8px;
+  font-weight: 600;
+  font-size: 0.88rem;
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+
+.btn:active {
+  transform: scale(0.96);
+}
+
+.btn-primario {
+  background-color: var(--accent-neon);
+  color: var(--bg-dark);
+}
+
+.btn-primario:hover {
+  background-color: var(--accent-hover);
+  box-shadow: 0 0 12px var(--accent-glow);
+}
+
+.btn-secundario {
+  background-color: rgba(244, 63, 94, 0.1);
+  color: var(--danger);
+  border: 1px solid rgba(244, 63, 94, 0.2);
+}
+
+.btn-secundario:hover {
+  background-color: var(--danger);
+  color: #ffffff;
+}
+
+.btn-bloque {
+  width: 100%;
+  margin-top: 0.5rem;
+  padding: 0.75rem;
+}
+
+/* Estados y Totales */
+.vacio {
+  color: var(--text-muted);
+  font-style: italic;
+  text-align: center;
+  padding: 1.5rem 0;
+}
+
+.total {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  font-size: 1.05rem;
+  padding-top: 1rem;
+  border-top: 1px dashed var(--card-border);
+  margin-top: 0.5rem;
+  color: var(--text-muted);
+}
+
+.total strong {
+  color: var(--accent-neon);
+  font-size: 1.3rem;
+  font-weight: 700;
+}
